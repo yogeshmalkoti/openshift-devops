@@ -1,0 +1,20 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dev-spring-petclinic
+spec:
+  destination:
+    namespace: demo-dev
+  source:
+    repoURL: http://gitea-demo-cicd.apps.itzocp-664003p39v-90rc.selfservice.aws.techzone.ibm.com/gitea/spring-petclinic-config
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: stage-spring-petclinic
+spec:
+  destination:
+    namespace: demo-stage
+  source:
+    repoURL: http://gitea-demo-cicd.apps.itzocp-664003p39v-90rc.selfservice.aws.techzone.ibm.com/gitea/spring-petclinic-config
